@@ -24,5 +24,4 @@ public class PersonController {
         return personRepository.findAll();
     }
 
-
 }

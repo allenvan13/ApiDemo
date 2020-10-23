@@ -12,5 +12,5 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update  # 第一次建表create  后面用update，要不然每次重启都会新建表
+      ddl-auto: none  # 第一次建表create  后面用update，要不然每次重启都会新建表
     show-sql: true
