@@ -4,8 +4,7 @@ package com.example.Controller;
 import com.example.DAO.PersonRepository;
 import com.example.Entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +22,17 @@ public class PersonController {
     public List<Person> findAll(){
         return personRepository.findAll();
     }
+
+    @PostMapping("/postPerson")
+    public String postPerson(@RequestParam(name = "id") Long id,String name){
+        if (!id.toString().isEmpty()){
+            return ("成功！ body:{\"id\":"
+                    +id+
+                    " \"name\":\""
+                    +name+"\"}");
+        }else return ("没传id");
+    }
+
+
 
 }
